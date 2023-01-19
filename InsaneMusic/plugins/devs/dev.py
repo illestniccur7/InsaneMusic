@@ -134,7 +134,7 @@ async def forceclose_command(_, CallbackQuery):
         return
 
 
-@app.on_message(filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot)
+@app.on_message(filters.command("sh") & filters.user(OWNER_ID))
 async def shellrunner(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**Usage:**\n/sh git pull")
