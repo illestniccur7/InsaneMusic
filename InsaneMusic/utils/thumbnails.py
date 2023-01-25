@@ -132,9 +132,7 @@ async def gen_thumb(videoid):
             font4 = ImageFont.truetype("assets/font2.ttf", 35)
 
             image4 = ImageDraw.Draw(image2)
-            image4.text(
-                (10, 10), "Insane Music", fill="white", font=font1, align="left"
-            )
+            image4.text((10, 10), "Insane Music", fill="white", font=font1, align="left")
             image4.text(
                 (670, 150),
                 "Now Playing",
@@ -169,7 +167,7 @@ async def gen_thumb(videoid):
             # description
             views = f"Views : {views}"
             duration = f"Duration : {duration} Mins"
-            channel = f"Channel : @Insane_Help365"
+            channel = f"Channel : Insane Help 365"
 
             image4.text((670, 450), text=views, fill="white", font=font4, align="left")
             image4.text(
@@ -272,9 +270,7 @@ async def gen_qthumb(videoid):
             font4 = ImageFont.truetype("assets/font2.ttf", 35)
 
             image4 = ImageDraw.Draw(image2)
-            image4.text(
-                (10, 10), "Insane Music", fill="white", font=font1, align="left"
-            )
+            image4.text((10, 10), "Insane Music", fill="white", font=font1, align="left")
             image4.text(
                 (670, 150),
                 "Added To Queue",
@@ -309,7 +305,7 @@ async def gen_qthumb(videoid):
             # description
             views = f"Views : {views}"
             duration = f"Duration : {duration} Mins"
-            channel = f"Channel : Insane_Help365"
+            channel = f"Channel : Insane Help 365"
 
             image4.text((670, 450), text=views, fill="white", font=font4, align="left")
             image4.text(
