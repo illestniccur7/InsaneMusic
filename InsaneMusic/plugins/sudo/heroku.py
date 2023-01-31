@@ -304,7 +304,7 @@ async def update_(client, message, _):
         exit()
 
 
-@app.on_message(filters.command(REBOOT_COMMAND) & filters.user(OWNER_ID))
+@app.on_message(filters.command(REBOOT_COMMAND) & SUDOERS)
 async def restart_(_, message):
     response = await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ...")
     served_chats = await get_active_chats()
