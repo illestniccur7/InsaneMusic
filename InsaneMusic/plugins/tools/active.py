@@ -75,33 +75,45 @@ async def activevi_(_, message: Message):
             f"**ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛs ᴏɴ ᴍᴜsɪᴄ ʙᴏᴛ :-**\n\n{text}",
             disable_web_page_preview=True,
         )
+
+
 LOGINGG = config.LOG_GROUP_ID
 
 
-#--------------------------Code------------------#
+# --------------------------Code------------------#
+
 
 @app.on_message(commandpro(["/ac"]) & SUDOERS)
 async def start(client: Client, message: Message):
     ac_audio = str(len(active))
     ac_video = str(len(activevideo))
-    await message.reply_text(f"𝗕𝗼𝘁 𝗔𝗰𝘁𝗶𝘃𝗲 𝗖𝗵𝗮𝘁𝘀 𝗜𝗻𝗳𝗼 • 📟\n•━━━━━━━━━━━━━━━━━━•\n🎙•Aᴜᴅɪᴏ  » {ac_audio} Gʀᴏᴜᴘs\n•───────•\n🖥• Vɪᴅᴇᴏ » {ac_video} Gʀᴏᴜᴘs\n•──────•", quote=True)
+    await message.reply_text(
+        f"𝗕𝗼𝘁 𝗔𝗰𝘁𝗶𝘃𝗲 𝗖𝗵𝗮𝘁𝘀 𝗜𝗻𝗳𝗼 • 📟\n•━━━━━━━━━━━━━━━━━━•\n🎙•Aᴜᴅɪᴏ  » {ac_audio} Gʀᴏᴜᴘs\n•───────•\n🖥• Vɪᴅᴇᴏ » {ac_video} Gʀᴏᴜᴘs\n•──────•",
+        quote=True,
+    )
 
 
-#--------------------------Clean_Commands------------------------#
+# --------------------------Clean_Commands------------------------#
+
 
 @app.on_message(commandpro(["/rm"]) & SUDOERS)
 async def cleaning(client: Client, message: Message):
-    A = 'rm -rf downloads'
+    A = "rm -rf downloads"
     try:
         os.system(A)
     except:
-        await message.reply_text(f"Failed To Delete Temp !!\nPlease Read\n{traceback.format_exc()}", quote=True)
-    await message.reply_text(f"Successfully Deleted Below Folders:\n -Downloads", quote=True)
+        await message.reply_text(
+            f"Failed To Delete Temp !!\nPlease Read\n{traceback.format_exc()}",
+            quote=True,
+        )
+    await message.reply_text(
+        f"Successfully Deleted Below Folders:\n -Downloads", quote=True
+    )
 
-    
+
 CPU_LOAD = psutil.cpu_percent(interval=0.5)
 RAM_LOAD = psutil.virtual_memory().percent
 DISK_SPACE = psutil.disk_usage("/").percent
 
 
-#-----------------------------AUTO_CLEANER-&-SAFETY-------------------------------#
+# -----------------------------AUTO_CLEANER-&-SAFETY-------------------------------#
