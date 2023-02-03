@@ -20,7 +20,7 @@ from InsaneMusic.utils.database import (add_banned_user,
                                        get_served_chats,
                                        is_banned_user,
                                        remove_banned_user)
-from FallenX.utils.decorators.language import language
+from InsaneMusic.utils.decorators.language import language
 
 # Command
 GBAN_COMMAND = get_command("GBAN_COMMAND")
